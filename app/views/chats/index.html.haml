@@ -8,7 +8,7 @@
 
 %h3== You are in #<span id="tag">#{@tag}</span>
 
-- if @client.authorized?
+- if !@client.authorized?
   = link_to "Login via Twitter to Chat", url(:login)
 - else
   %h5==  Logged in as #{@client.user}

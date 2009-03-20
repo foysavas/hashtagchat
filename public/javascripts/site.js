@@ -16,7 +16,11 @@ $(document).ready(function() {
     since_id = 0;
     return false;
   });
-  $('#post_form').ajaxForm();
+  $('#post_form').submit(function() {
+    $(this).ajaxSubmit();
+    $('#post_form_message').val('');
+    return false;
+  });
 });
 
 function update_chat() {

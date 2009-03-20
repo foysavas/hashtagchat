@@ -1,0 +1,23 @@
+%h1 Welcome to HashTag Chat!
+%h2 (chatrooms for twitter hashtags)
+
+= form :action => url(:chats), :method => :get, :id => 'chat_form' do
+  %p
+    = text_field :name => :tag, :label => 'HashTag: #', :value => @tag, :id => 'chat_form_tag_field'
+    = submit "Enter Chat"
+
+%h3== You are in #<span id="tag">#{@tag}</span>
+
+- if @client.authorized?
+  = link_to "Login via Twitter to Chat", url(:login)
+- else
+  %h5==  Logged in as #{@client.user}
+  = form :action => (:posts), :id => 'post_form' do
+    = hidden_field :name => :tag, :value => @tag, :id => 'post_form_tag_field'
+    %p
+      = text_area :name => :message
+    %p
+      = submit "Update"
+
+#chat
+

@@ -2,6 +2,7 @@ class Posts < Application
 
   def create
     hashtag = "##{session[:tag]}"
+    hashtag = "##{params[:tag]}" if params[:tag]
     message = params[:message]
     length = hashtag.length + 1
     if message.length > (140-length)

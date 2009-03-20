@@ -14,9 +14,9 @@ $(document).ready(function() {
     $('#tag').html(tag);
     $('#post_form_tag_field').val(tag);
     since_id = 0;
-    update_chat();
     return false;
   });
+  $('#post_form').ajaxForm();
 });
 
 function update_chat() {

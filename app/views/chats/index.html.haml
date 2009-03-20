@@ -13,8 +13,8 @@
 - else
   %div
     %span Logged in as
-    %img{ :src => @client.user.profile_image_url }
-    %span #{@client.user.username}
+    %img{ :src => @client.user[:profile_image_url] }
+    %span #{@client.user[:username]}
   = form :action => (:posts), :id => 'post_form' do
     = hidden_field :name => :tag, :value => @tag, :id => 'post_form_tag_field'
     %p

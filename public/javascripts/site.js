@@ -1,5 +1,5 @@
 var tag = 'hashtagchat';
-var interval = 5000;
+var interval = 2000;
 var since_id = 0;
 var mutex_lock = false;
 

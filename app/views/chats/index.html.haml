@@ -17,6 +17,9 @@
     %span= @client.user[0]['user']['screen_name']
     = link_to "Logout", url(:logout)
   = form :action => (:posts), :id => 'post_form' do
+    %div
+      %span Characters left:
+      %span#chars_left= 138 - @tag.length
     = hidden_field :name => :tag, :value => @tag, :id => 'post_form_tag_field'
     %p
       = text_area :name => :message, :id => 'post_form_message'

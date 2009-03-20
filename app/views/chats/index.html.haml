@@ -11,7 +11,10 @@
 - if !@client.authorized?
   = link_to "Login via Twitter to Chat", url(:login)
 - else
-  %h5==  Logged in as #{@client.user}
+  %div
+    %span Logged in as
+    %img{ :src => @client.user.profile_image_url }
+    %span #{@client.user.username}
   = form :action => (:posts), :id => 'post_form' do
     = hidden_field :name => :tag, :value => @tag, :id => 'post_form_tag_field'
     %p

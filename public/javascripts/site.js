@@ -27,7 +27,7 @@ $(document).ready(function() {
     return false;
   });
   if($('#post_form_message').length > 0) {
-    $('#post_form_message').keypress(function(e) {
+    $('#post_form_message').keyup(function(e) {
       left = 138 - tag.length - $('#post_form_message').val().length;
       $('#chars_left').html(left);
     });

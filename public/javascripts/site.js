@@ -37,7 +37,7 @@ $(document).ready(function() {
       $('#chars_left').html(left);
     });
   }
-  $(document).mouseenter(function(){
+  $(document).mousemove(function(){
     if(number_in_title)
       reset_title();
   });
@@ -91,8 +91,10 @@ function handle_new_tweets(twitter_json) {
     since_id = tweet['id'];    
   }
   number_new = twitter_json.results.length;
-  document.title = '(' + number_new + ') ' + tag + ' - ' + original_title;
-  number_in_title = true;
+  if(number_new > 0) {
+    document.title = '(' + number_new + ') ' + tag + ' - ' + original_title;
+    number_in_title = true;
+  }
 }     
 
 

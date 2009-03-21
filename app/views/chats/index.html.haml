@@ -17,13 +17,10 @@
 
 - if !@client.authorized?
   #user_info
-    = link_to "Login via Twitter to Chat", url(:login)
+    = link_to "login via twitter to chat", url(:login)
 - else
   #user_info
-    %span Logged in as
-    %img{ :src => @client.user[0]['user']['profile_image_url'] }
-    %span= @client.user[0]['user']['screen_name']
-    = link_to "Logout", url(:logout)
+    = link_to "logout to switch twitter accounts", url(:logout)
 
   #instructions hashtag will be automatically added to your tweet
 

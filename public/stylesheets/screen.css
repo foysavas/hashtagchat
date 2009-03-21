@@ -121,7 +121,12 @@ body {
     width: 250px; }
 
 #user_info {
-  margin-bottom: 15px; }
+  margin-bottom: 20px;
+  text-align: center; }
+  #user_info a {
+    font-size: 14px;
+    color: #ff0040;
+    text-align: center; }
 
 #instructions {
   font-size: 14px;
@@ -163,7 +168,7 @@ body {
   overflow: -moz-scrollbars-none;
   display: inline-block;
   margin: 0px 0px;
-  border-top: 1px solid #ccc;
+  border-top: 1px dashed #d2dada;
   padding: 12px 6px; }
   .message {
     display: block; }

@@ -99,6 +99,8 @@ body {
   margin-bottom: 55px; }
   #header {
     display: block; }
+  #header img {
+    margin-bottom: 8px; }
   #header h2 {
     font-weight: bold;
     font-size: 11px; }

@@ -23,6 +23,8 @@ $(document).ready(function() {
     $('#post_form_tag_field').val(tag);
     reset_title();
     since_id = 0;
+    if($('#chars_left').length > 0)
+      $('#chars_left').html(138 - tag.length);
     return false;
   });
   $('#post_form').submit(function() {

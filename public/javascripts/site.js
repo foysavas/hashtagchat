@@ -36,7 +36,6 @@ $(document).ready(function() {
 
 function update_chat() {
   find_new_tweets();
-  mutex_lock = false;
 }
 
 function clean_tweet(tweet) {
@@ -83,5 +82,6 @@ function find_new_tweets() {
   url += "&callback=?";
   $.getJSON(url,function(data){
     handle_new_tweets(data)
+    mutex_lock = false;
   });
 }

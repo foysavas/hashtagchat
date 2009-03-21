@@ -2,9 +2,13 @@ var tag = 'hashtagchat';
 var interval = 6000;
 var since_id = 0;
 var mutex_lock = false;
+var original_title = "";
+var number_in_title = false;
 
 $(document).ready(function() {
   tag = $('#tag').html(); 
+  original_title = document.title;
+  document.title = tag + ' - ' + original_title;
   update_chat();
   $.timer(interval, function(t) {
     if(!mutex_lock) {
@@ -17,6 +21,7 @@ $(document).ready(function() {
     $('#chat').html('');
     $('#tag').html(tag);
     $('#post_form_tag_field').val(tag);
+    reset_title();
     since_id = 0;
     return false;
   });
@@ -32,7 +37,22 @@ $(document).ready(function() {
       $('#chars_left').html(left);
     });
   }
+  $(document).mouseenter(function(){
+    if(number_in_title)
+      reset_title();
+  });
+  $(document).keypress(function(){
+    if(number_in_title)
+      reset_title();
+  });
+
 });
+
+function reset_title() {
+  document.title = tag + ' - ' + original_title;
+  number_in_title = false;
+}
+
 
 function update_chat() {
   find_new_tweets();
@@ -70,6 +90,9 @@ function handle_new_tweets(twitter_json) {
     $('#chat').prepend("<div class='message'>"+twitter_avatar(tweet)+twitter_msg(tweet)+twitter_info(tweet)+"</div>");
     since_id = tweet['id'];    
   }
+  number_new = twitter_json.results.length;
+  document.title = '(' + number_new + ') ' + tag + ' - ' + original_title;
+  number_in_title = true;
 }     
 
 

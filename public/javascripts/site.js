@@ -25,7 +25,10 @@ $(document).ready(function() {
     reset_title();
     since_id = 0;
     if($('#chars_left').length > 0)
-      $('#chars_left').html(138 - tag.length);
+      left = 138 - tag.length;
+      if($('#post_form_quietly').is(':checked'))
+        left = left - 3;
+      $('#chars_left').html(left);
     return false;
   });
   $('#post_form').submit(function() {
@@ -37,9 +40,19 @@ $(document).ready(function() {
   if($('#post_form_message').length > 0) {
     $('#post_form_message').keyup(function(e) {
       left = 138 - tag.length - $('#post_form_message').val().length;
+      if($('#post_form_quietly').is(':checked'))
+        left = left - 3;
       $('#chars_left').html(left);
     });
+    $('#post_form_quietly').click(function(){
+      left = parseInt($('#chars_left').html());
+      if($('#post_form_quietly').is(':checked'))
+        $('#chars_left').html(left - 3);
+      else
+        $('#chars_left').html(left + 3);  
+    });
   }
+
   $(document).mousemove(function(){
     if(number_in_title)
       reset_title();

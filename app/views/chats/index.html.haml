@@ -34,6 +34,8 @@
         %span#chars_left= 138 - @tag.length
         %span characters left
       .right
+        %label quietly
+        = check_box :name => :quietly, :id => 'post_form_quietly'
         = submit "tweet"
 
 #headings

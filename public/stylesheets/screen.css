@@ -1,0 +1,188 @@
+
+
+
+
+
+
+
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" ""; }
+  blockquote:before,
+  blockquote:after,   q:before,
+  q:after {
+    content: ""; }
+
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle; }
+
+a img {
+  border: none; }
+
+input.text, textarea {
+  font-family: Arial, Verdana, sans;
+  font-size: 12px;
+  border: 1px solid #b0b0b0; }
+
+body {
+  font-family: Arial, Verdana, sans;
+  font-size: 12px;
+  color: black;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px; }
+
+.container {
+  margin: 0 auto;
+  text-align: left;
+  width: 480px; }
+
+#header {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block;
+  margin-bottom: 55px; }
+  #header {
+    display: block; }
+  #header h2 {
+    font-weight: bold;
+    font-size: 11px; }
+  #header .left {
+    float: left;
+    width: 300px; }
+  #header .right {
+    float: right; }
+
+#chat_form {
+  margin-bottom: 25px; }
+  #chat_form label {
+    font-weight: bold;
+    font-size: 24px;
+    margin-right: 5px;
+    vertical-align: middle; }
+  #chat_form input.text {
+    font-size: 16px;
+    padding: 2px;
+    width: 250px; }
+
+#user_info {
+  margin-bottom: 15px; }
+
+#instructions {
+  font-size: 14px;
+  font-style: italic;
+  color: #a2a2a2;
+  margin-bottom: 10px; }
+
+#post_form textarea {
+  width: 470px;
+  height: 55px;
+  padding: 5px;
+  font-size: 13px;
+  margin-bottom: 8px; }
+#post_form .submit {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block; }
+  #post_form .submit {
+    display: block; }
+  #post_form .submit .left {
+    float: left;
+    font-style: italic;
+    font-size: 14px;
+    color: #a2a2a2; }
+  #post_form .submit .right {
+    float: right; }
+
+#headings {
+  margin-bottom: 25px; }
+  #headings h3 {
+    font-weight: bold;
+    font-size: 24px; }
+  #headings h4 {
+    font-weight: bold;
+    font-size: 16px; }
+
+.message {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block;
+  margin: 0px 0px;
+  border-top: 1px solid #ccc;
+  padding: 12px 6px; }
+  .message {
+    display: block; }
+  .message .avatar {
+    float: left;
+    width: 50px; }
+  .message .msg {
+    float: right;
+    width: 410px;
+    font-size: 14px; }
+    .message .msg a, .message .msg a:hover {
+      font-size: 14px;
+      color: #ff0040;
+      text-decoration: none; }
+  .message .info {
+    margin-top: 3px;
+    float: right;
+    width: 410px;
+    font-style: italic;
+    font-size: 14px;
+    color: #a2a2a2;
+    font-size: 12px; }

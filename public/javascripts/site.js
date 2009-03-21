@@ -21,6 +21,7 @@ $(document).ready(function() {
     $('#chat').html('');
     $('#tag').html(tag);
     $('#post_form_tag_field').val(tag);
+    $.get('/?'+tag);
     reset_title();
     since_id = 0;
     if($('#chars_left').length > 0)
@@ -51,7 +52,7 @@ $(document).ready(function() {
 });
 
 function reset_title() {
-  document.title = tag + ' - ' + original_title;
+  document.title = "#" + tag + ' - ' + original_title;
   number_in_title = false;
 }
 
@@ -94,8 +95,9 @@ function handle_new_tweets(twitter_json) {
   }
   number_new = twitter_json.results.length;
   if(number_new > 0) {
-    document.title = '(' + number_new + ') ' + tag + ' - ' + original_title;
+    document.title = '(' + number_new + ') ' + "#" + tag + ' - ' + original_title;
     number_in_title = true;
+    prepare_effects();
   }
 }     
 
@@ -110,5 +112,16 @@ function find_new_tweets() {
   $.getJSON(url,function(data){
     handle_new_tweets(data)
     mutex_lock = false;
+  });
+}
+
+function prepare_effects() {
+  $('.message').unbind();
+  $('.message').mouseover(function(){
+    $('.message').css("background-color", "#fff");
+    $(this).css("background-color", "#f0f0f0");
+  });
+  $('.message').mouseout(function(){
+    $(this).css("background-color", "#fff");
   });
 }

@@ -1,0 +1,109 @@
+@import blueprint/screen.sass
+@import compass/reset.sass
+
+!font_family = "Arial", "Verdana", sans
+!alt_font_family = "Verdana", sans
+!font_size = 12px
+!font_color = #000
+
+input.text, textarea
+  :font-family = !font_family
+  :font-size = !font_size
+  :border 1px solid #b0b0b0
+
+body
+  :font-family = !font_family
+  :font-size = !font_size
+  :color = !font_color
+  :margin 0 auto
+  :text-align center
+  :margin-top 20px
+
+.container
+  :margin 0 auto
+  :text-align left
+  :width 480px
+
+#header
+  +clearfix
+  h2
+    :font-weight bold
+    :font-size 11px
+  .left
+    :float left
+    :width 300px
+  .right
+    :float right
+  :margin-bottom 55px
+
+#chat_form
+  label
+    :font-weight bold
+    :font-size 24px
+    :margin-right 5px
+    :vertical-align middle
+  input.text
+    :font-size 16px
+    :padding 2px
+    :width 250px
+  :margin-bottom 25px
+
+#user_info
+  :margin-bottom 15px
+
+#instructions
+  :font-size 14px
+  :font-style italic
+  :color #a2a2a2
+  :margin-bottom 10px
+
+#post_form
+  textarea
+    :width 470px
+    :height 55px
+    :padding 5px
+    :font-size 13px
+    :margin-bottom 8px
+  .submit
+    +clearfix
+    .left
+      :float left
+      :font-style italic
+      :font-size 14px      
+      :color #a2a2a2
+    .right
+      :float right
+
+#headings
+  h3
+    :font-weight bold
+    :font-size 24px
+  h4
+    :font-weight bold
+    :font-size 16px
+  :margin-bottom 25px
+
+.message
+  +clearfix
+  :margin 0px 0px
+  :border-top 1px solid #ccc
+  :padding 12px 6px
+  .avatar
+    :float left
+    :width 50px
+  .msg
+    :float right
+    :width 410px
+    a, a:hover
+      :font-size 14px
+      :color #ff0040
+      :text-decoration none
+    :font-size 14px
+  .info
+    :margin-top 3px
+    :float right
+    :width 410px
+    :font-style italic
+    :font-size 14px      
+    :color #a2a2a2
+    :font-size 12px

@@ -1,30 +1,47 @@
-%h1 Welcome to HashTag Chat!
-%h2 (chatrooms for twitter hashtags)
+#header
+  .left
+    %a{ :href => '/' }
+      %logo
+        %img{ :src => '/images/hashtagchat.png' }
+    %h2 welcome to hashtag chats!
+    %h2 hashtag chats = chatrooms for twitter hashtags
+  .right
+    %a{ :href => 'http://assemb.ly' }
+      %img{ :src => '/images/broughttoyou.png' }
 
 = form :action => url(:chats), :method => :get, :id => 'chat_form' do
   %p
-    = text_field :name => :tag, :label => 'HashTag: #', :value => @tag, :id => 'chat_form_tag_field'
-    = submit "Enter Chat"
+    = text_field :name => :tag, :label => 'hashtag #', :value => @tag, :id => 'chat_form_tag_field'
+    = submit "enter chat"
 
-%h3== You are in #<span id="tag">#{@tag}</span>
 
 - if !@client.authorized?
-  = link_to "Login via Twitter to Chat", url(:login)
+  #user_info
+    = link_to "Login via Twitter to Chat", url(:login)
 - else
-  %div
+  #user_info
     %span Logged in as
     %img{ :src => @client.user[0]['user']['profile_image_url'] }
     %span= @client.user[0]['user']['screen_name']
     = link_to "Logout", url(:logout)
+
+  #instructions hashtag will be automatically added to your tweet
+
   = form :action => (:posts), :id => 'post_form' do
     %div
-      %span Characters left:
-      %span#chars_left= 138 - @tag.length
     = hidden_field :name => :tag, :value => @tag, :id => 'post_form_tag_field'
     %p
       = text_area :name => :message, :id => 'post_form_message'
-    %p
-      = submit "Update"
+    .submit
+      .left
+        %span#chars_left= 138 - @tag.length
+        %span characters left
+      .right
+        = submit "tweet"
+
+#headings
+  %h3== you are in #<span id="tag">#{@tag}</span>
+  %h4 no need to refresh the page. update are live!
 
 #chat
 
